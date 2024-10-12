@@ -1,0 +1,24 @@
+   <macro name="LIGHT" icon="PLAY">
+      <assert-service description="Ensure scene service" uuid="LIGHT">
+         <assert-characteristic description="Ensure scene characteristic" uuid="scene-characteristic">
+            <property name="WRITE" requirement="MANDATORY"/>
+         </assert-characteristic>
+      </assert-service>
+      <write description="Write 0x01 to scene-characteristic" characteristic-uuid="scene-characteristic" service-uuid="LIGHT" value="01" type="WRITE_REQUEST"/>
+      <sleep description="Sleep 500 ms" timeout="500"/>
+      <write description="Write 0x00 to scene-characteristic" characteristic-uuid="scene-characteristic" service-uuid="LIGHT" value="00" type="WRITE_REQUEST"/>
+      <sleep description="Sleep 500 ms" timeout="500"/>
+   </macro>
+
+   <macro name="XLed" icon="LED">
+      <assert-service description="Ensure led service" uuid="led">
+         <assert-characteristic description="Ensure led characteristic" uuid="led-characteristic">
+            <property name="WRITE" requirement="MANDATORY"/>
+         </assert-characteristic>
+      </assert-service>
+      <write description="Turn on LED" characteristic-uuid="led-characteristic" service-uuid="led" value="True" type="WRITE_REQUEST"/>
+      <sleep description="Sleep 500 ms" timeout="500"/>
+      <write description="Turn off LED" characteristic-uuid="led-characteristic" service-uuid="led" value="False" type="WRITE_REQUEST"/>
+      <sleep description="Sleep 500 ms" timeout="500"/>
+   </macro>
+</device>
