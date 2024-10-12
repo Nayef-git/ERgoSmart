@@ -1,4 +1,4 @@
-   <macro name="LIGHT" icon="PLAY">
+   <macro name="LIGHT" icon="LIGHT">
       <assert-service description="Ensure scene service" uuid="LIGHT">
          <assert-characteristic description="Ensure scene characteristic" uuid="scene-characteristic">
             <property name="WRITE" requirement="MANDATORY"/>
