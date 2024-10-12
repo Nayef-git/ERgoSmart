@@ -1,12 +1,13 @@
-   <macro name="LIGHT" icon="LIGHT">
-      <assert-service description="Ensure scene service" uuid="LIGHT">
+<device>
+   <macro name="XScene" icon="SCENE">
+      <assert-service description="Ensure scene service" uuid="scene">
          <assert-characteristic description="Ensure scene characteristic" uuid="scene-characteristic">
             <property name="WRITE" requirement="MANDATORY"/>
          </assert-characteristic>
       </assert-service>
-      <write description="Write 0x01 to scene-characteristic" characteristic-uuid="scene-characteristic" service-uuid="LIGHT" value="01" type="WRITE_REQUEST"/>
+      <write description="Write 0x01 to scene-characteristic" characteristic-uuid="scene-characteristic" service-uuid="scene" value="01" type="WRITE_REQUEST"/>
       <sleep description="Sleep 500 ms" timeout="500"/>
-      <write description="Write 0x00 to scene-characteristic" characteristic-uuid="scene-characteristic" service-uuid="LIGHT" value="00" type="WRITE_REQUEST"/>
+      <write description="Write 0x00 to scene-characteristic" characteristic-uuid="scene-characteristic" service-uuid="scene" value="00" type="WRITE_REQUEST"/>
       <sleep description="Sleep 500 ms" timeout="500"/>
    </macro>
 
